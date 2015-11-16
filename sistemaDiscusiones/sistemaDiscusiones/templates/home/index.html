@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{%  block title %}
+inicio
+{% endblock %}
+{% block content %}
+	<div id="header">
+		<ul class="nav">
+		  <li><a href="/">Inicio</a></li>
+		  <li><a href="{% url 'users:user_detail' user.username %}">perfil</a></li>
+		  <li><a href="/preguntas">Preguntas</a></li>
+		  <li><a href="/preguntar">Haz una Pregunta</a></li>
+		</ul>
+
+	</div>
+
+	<h4>Preguntas : {{total_questions}}</h4>
+	<h4>Usuarios : {{total_users}}</h4>
+
+	{% for question, tags in object_list %}
+		<h4>{{ question.title }}</h4>
+		<h4>{{ question.user }}</h4>
+
+		<h2>Tags</h2>
+		{% for tag in tags %}
+			{{ tag.nombre }}
+		{% endfor %}	
+
+
+	{% endfor %}
+
+
+
+{% endblock %}

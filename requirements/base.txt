@@ -1,0 +1,6 @@
+Django==1.6
+Unipath==1.1
+psycopg2==2.4.5
+psycopg2==2.6
+South==1.0.2
+django-braces==1.4.0

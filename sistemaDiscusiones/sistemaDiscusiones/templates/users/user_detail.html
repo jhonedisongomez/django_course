@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{%  block title %}
+inicio
+{% endblock %}
+{% block content %}
+	<div id="header">
+		<ul class="nav">
+		  <li><a href="/index">Inicio</a></li>
+		  <li><a href="{% url 'users:user_detail' user.id %}">perfil</a></li>
+		</ul>
+
+	</div>
+
+	<p>{{object.username}}</p>
+
+
+{% for question, tags in ques_tags %}
+	<p>{{ question.title }}</p>	
+	<p>publicado el {{question.modifed}}</p>
+
+	<p class="tags">
+
+		<span>Etiquetas:</span>
+
+		{% for tag in tags %}
+		<p>{{tag.nombre}}</p>
+
+		{% endfor %}
+	{% endfor %}	
+	
+
+
+	</p>
+
+{% endblock %}
+

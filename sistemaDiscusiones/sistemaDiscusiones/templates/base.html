@@ -1,0 +1,17 @@
+<html lang='en'>
+<head>
+	<meta charset="UTF-8">
+	<title>{% block tittle %} {% endblock %}</title>
+	{% load static from staticfiles %}
+	<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+	
+</head>
+<body>
+	<h1>devCode.la</h1>
+	{% block content %} {% endblock %}
+	{% block footer %}
+		<hr>
+		<p>mensaje</p>
+	{% endblock %}
+</body>
+</html>

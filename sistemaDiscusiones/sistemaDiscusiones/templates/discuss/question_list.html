@@ -1,0 +1,26 @@
+{%  block title %}
+inicio
+{% endblock %}
+{% block content %}
+
+	<div id="header">
+			<ul class="nav">
+			  <li><a href="/">Inicio</a></li>
+			  <li><a href="{% url 'users:user_detail' user.username %}">perfil</a></li>
+			  <li><a href="/Preguntas">Preguntas</a></li>
+			</ul>
+
+	</div>
+
+	{% for question in questions %}
+		<h4>titulo de la pregunta : {{ question.title }}</h4>
+		<h4>titulo de la pregunta : {{ question.user }}</h4>
+		{% for tag in tags %}
+
+		<div class="tags"></div>
+		<h1>Tags</h1>	
+		<input type="button">{{ tag.nombre }}
+		{% endfor %}
+	{% endfor %}
+
+{% endblock %}

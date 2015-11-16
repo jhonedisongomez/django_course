@@ -1,0 +1,2 @@
+ python manage.py runserver --settings=sistemaDiscusiones.settings.local
+ python manage.py makemigration nameApp --settings=sistemaDiscusiones.settings.local
